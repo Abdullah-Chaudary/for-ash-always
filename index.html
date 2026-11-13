@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#170d18" />
+  <meta name="description" content="A little birthday surprise for Ash." />
+  <title>For Ash, Always ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="glow glow-one"></div><div class="glow glow-two"></div>
+    <div class="grain"></div><div class="stars" id="stars"></div>
+  </div>
+
+  <div class="bg-lyrics" id="bgLyrics" aria-hidden="true">
+    <span class="lyric-line" id="lyricLine"></span>
+  </div>
+
+  <button class="music-toggle" id="musicToggle" aria-label="Play birthday music" title="Music">
+    <span class="music-icon">♫</span><span class="music-label">Music off</span>
+    <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <audio id="birthdayAudio" preload="auto" loop src="./assets/hbd.mpeg"></audio>
+
+  <main>
+    <section class="scene active" id="welcome" aria-labelledby="welcomeTitle">
+      <div class="eyebrow"><span></span> A LITTLE SOMETHING, FOR MY CATO <span></span></div>
+      <div class="envelope-wrap">
+        <div class="envelope-shadow"></div>
+        <button class="envelope" id="openEnvelope" aria-label="Open your birthday surprise">
+          <span class="envelope-back"></span>
+          <span class="letter">
+            <span class="letter-kicker">A note for you</span>
+            <span class="letter-name">Ash</span>
+            <span class="letter-heart">♡</span>
+          </span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="seal">A</span>
+        </button>
+      </div>
+      <h1 id="welcomeTitle">Some things are<br><em>better opened</em>.</h1>
+      <p class="subcopy">And this little one is all yours.</p>
+      <button class="primary-btn" id="beginBtn">Open your surprise <span>↗</span></button>
+      <div class="bottom-note">MADE WITH ALL MY LOVE <span>✳</span></div>
+    </section>
+
+    <section class="scene" id="intro" aria-labelledby="introTitle">
+      <div class="scene-number">01 / A DAY FOR YOU</div>
+      <div class="intro-orbit" aria-hidden="true"><span>19</span><i>✳</i><b>✦</b></div>
+      <p class="eyebrow">TODAY, THE WORLD GOT LUCKIER</p>
+      <h2 id="introTitle">Happy 19th<br><em>Birthday, Ash.</em></h2>
+      <p class="scene-copy">If I could wrap up every little reason I love you and put it in one place, it still wouldn't come close to showing you how much you mean to me.</p>
+      <button class="text-btn next-scene" data-next="words">There's more <span>→</span></button>
+    </section>
+
+    <section class="scene" id="words" aria-labelledby="wordsTitle">
+      <div class="scene-number">02 / JUST A FEW THINGS</div>
+      <p class="eyebrow">IN CASE I DON'T SAY IT ENOUGH</p>
+      <h2 id="wordsTitle" class="words-heading">A few things<br><em>I hope you know.</em></h2>
+      <div class="message-stack">
+        <article class="message-card"><span>01</span><p>You're the woman who made me believe in love, and showed me how beautiful it can truly be.</p><i>✳</i></article>
+        <article class="message-card"><span>02</span><p>You deserve a kind of love that makes the whole world jealous. And if it's up to me, I'll spend every day making sure you feel it.</p><i>♡</i></article>
+        <article class="message-card"><span>03</span><p>You're my biggest supporter, my constant source of strength, and the person I want cheering beside me through everything.</p><i>✦</i></article>
+      </div>
+      <button class="text-btn next-scene" data-next="cake">One more surprise <span>→</span></button>
+    </section>
+
+    <section class="scene cake-scene" id="cake" aria-labelledby="cakeTitle">
+      <div class="scene-number">03 / MAKE A WISH</div>
+      <p class="eyebrow">NINETEEN LOOKS BEAUTIFUL ON YOU</p>
+      <h2 id="cakeTitle">A wish, just<br><em>for you.</em></h2>
+      <p class="scene-copy cake-instruction" id="cakeInstruction">Take a breath, make a wish, and blow out your candles.</p>
+
+      <div class="cake-stage">
+        <div class="cake-sparkle s1">✦</div><div class="cake-sparkle s2">✧</div><div class="cake-sparkle s3">✳</div>
+        <div class="cake">
+          <div class="candles" id="candles" aria-label="19 lit candles"></div>
+          <div class="cake-top"></div>
+          <div class="cake-body"><div class="icing-drip"></div><div class="cake-decoration">♡</div></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+      <div class="candle-count"><span id="remainingCount">19</span> little lights left</div>
+      <div class="blow-controls" id="blowControls">
+        <button class="primary-btn mic-btn" id="micBtn"><span class="mic-symbol">◖</span> Enable microphone</button>
+        <button class="fallback-btn" id="blowBtn">Or tap here to blow them out</button>
+        <p class="mic-status" id="micStatus" aria-live="polite">Your microphone is only used to sense your breath. Nothing is recorded or saved.</p>
+      </div>
+      <div class="celebration hidden" id="celebration">
+        <p class="eyebrow">WISH SENT INTO THE UNIVERSE</p>
+        <h3>May it find<br><em>its way to you.</em></h3>
+        <button class="text-btn next-scene" data-next="final">A little note from me <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="scene final-scene" id="final" aria-labelledby="finalTitle">
+      <div class="final-flower" aria-hidden="true">✳</div>
+      <p class="eyebrow">AND A MILLION MORE BIRTHDAYS TO COME</p>
+      <h2 id="finalTitle">Happy 19th,<br><em>my love.</em></h2>
+      <div class="letter-note">
+        <div class="note-top">TO MY ASH <span>♡</span></div>
+        <p>Happy birthday, my love. ♡</p>
+        <p>I hope nineteen brings you all the happiness your heart can hold, the kind of peace that feels like home, and countless little moments that make you smile for no reason.</p>
+        <p>You're the woman who made me believe in love. You're my biggest supporter, my favourite person, and someone I never want to stop choosing. I love your eyes, your smile, your hair, your nature, your little quirks, and every tiny thing that makes you who you are. Honestly, I don't think you realise just how beautiful you are to me.</p>
+        <p>Sometimes I wish I could skip ahead to a life where I get to wake up next to you every single morning. Where I get to tuck your hair behind your ears, kiss your forehead and your hands before the day begins, pull you into the tightest hugs, and steal little kisses on your nose throughout the day. Yes, that adorable little nose of yours. I don't think I'll ever get tired of kissing it. I want to smell your beautiful hair, hold you close, take care of you, and find a hundred little ways to remind you how loved you are.</p>
+        <p>I also want to say I'm sorry. I'm sorry for the times I've hurt you, for the moments I've made you feel anything less than loved, and especially for lately, when my own struggles have sometimes stopped me from treating you the way you deserve. I know having things on my mind doesn't make it okay to take anything out on you. You deserve patience, affection, reassurance, and the very best of me. I'm still figuring things out, but I never want you to feel like you're paying the price for the battles I'm fighting.</p>
+        <p>There's so much I want to achieve in life, and a big part of why I push myself so hard is because I dream of a future with you. I want to build a life where circumstances never get to decide whether we can be together. Where I can stand beside you, make you my wife, take care of you, and give us the life we dream about. I don't want to lose something as precious as you because I wasn't able to build the stability and future I know we deserve. I want to become someone who can turn all these promises into reality.</p>
+        <p>I want to be the person who shows up for you, who brings you everything you need before you even have to ask, who celebrates your smallest victories and stands beside you through your hardest days. I want to give you the world, put it at your feet, and treat you like the princess you deserve to be. Not just on your birthday, but on ordinary Tuesdays, difficult days, and every day in between.</p>
+        <p>You deserve a love so beautiful that the whole world would be jealous of the way you're loved. And I hope I get to spend my life giving you exactly that.</p>
+        <p>Thank you for being you. For making my world softer, brighter, and so much more meaningful. I may not always find the perfect words, but I hope you never have to question how deeply I love you or how grateful I am that it's you.</p>
+        <p>If I could make one wish today, it would be to have the privilege of waking up to your face for the rest of my life.</p>
+        <p>Happy nineteenth birthday, my love. I love you, more than these words could ever explain.</p>
+        <p class="signature">Always yours, <em>♡</em></p>
+      </div>
+      <button class="primary-btn replay-btn" id="replayBtn">Replay our little moment <span>↻</span></button>
+      <div class="bottom-note">FOR ASH, ALWAYS <span>✳</span></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./script.js"></script>
+</body>
+</html>
